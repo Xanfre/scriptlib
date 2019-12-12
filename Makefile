@@ -130,22 +130,22 @@ SCRIPTLIB3 = libScript3.a
 SCRIPTLIB3D = libScript3-d.a
 
 $(bin1dir)/%.o: $(srcdir)/%.cpp
-	$(CXX) $(CXXFLAGS) $(CXXDEBUG) $(DEFINES) -D_DARKGAME=1 $(INCLUDES) -o $@ -c $<
+	$(CXX) $(CXXFLAGS) $(CXXDEBUG) $(DEFINES) -D_DARKGAME=1 -D_NEWDARK $(INCLUDES) -o $@ -c $<
 
 $(bin1dir)/%-d.o: $(srcdir)/%.cpp
-	$(CXX) $(CXXFLAGS) $(CXXDEBUG) $(DEFINES) -D_DARKGAME=1 $(INCLUDES) -o $@ -c $<
+	$(CXX) $(CXXFLAGS) $(CXXDEBUG) $(DEFINES) -D_DARKGAME=1 -D_NEWDARK $(INCLUDES) -o $@ -c $<
 
 $(bin2dir)/%.o: $(srcdir)/%.cpp
-	$(CXX) $(CXXFLAGS) $(CXXDEBUG) $(DEFINES) -D_DARKGAME=2 $(INCLUDES) -o $@ -c $<
+	$(CXX) $(CXXFLAGS) $(CXXDEBUG) $(DEFINES) -D_DARKGAME=2 -D_NEWDARK $(INCLUDES) -o $@ -c $<
 
 $(bin2dir)/%-d.o: $(srcdir)/%.cpp
-	$(CXX) $(CXXFLAGS) $(CXXDEBUG) $(DEFINES) -D_DARKGAME=2 $(INCLUDES) -o $@ -c $<
+	$(CXX) $(CXXFLAGS) $(CXXDEBUG) $(DEFINES) -D_DARKGAME=2 -D_NEWDARK $(INCLUDES) -o $@ -c $<
 
 $(bin3dir)/%.o: $(srcdir)/%.cpp
-	$(CXX) $(CXXFLAGS) $(CXXDEBUG) $(DEFINES) -D_DARKGAME=3 $(INCLUDES) -o $@ -c $<
+	$(CXX) $(CXXFLAGS) $(CXXDEBUG) $(DEFINES) -D_DARKGAME=3 -D_NEWDARK $(INCLUDES) -o $@ -c $<
 
 $(bin3dir)/%-d.o: $(srcdir)/%.cpp
-	$(CXX) $(CXXFLAGS) $(CXXDEBUG) $(DEFINES) -D_DARKGAME=3 $(INCLUDES) -o $@ -c $<
+	$(CXX) $(CXXFLAGS) $(CXXDEBUG) $(DEFINES) -D_DARKGAME=3 -D_NEWDARK $(INCLUDES) -o $@ -c $<
 
 
 all: $(bindirectories) $(SCRIPTLIB1) $(SCRIPTLIB1D) $(SCRIPTLIB2) $(SCRIPTLIB2D) $(SCRIPTLIB3) $(SCRIPTLIB3D)
