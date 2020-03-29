@@ -23,15 +23,19 @@
 #include <cstring>
 #include <malloc.h>
 
-int ShowBook(int iObject, bool bArt, int iTime)
-{
 #if (_DARKGAME == 3)
+int ShowBook(int iObject, bool, int iTime)
+{
 	SService<IPropertySrv> pPS(g_pScriptManager);
 	if (!pPS->Possessed(iObject, "UseMsg"))
 		return 1;
 	SService<IShockGameSrv> pShock(g_pScriptManager);
 	pShock->AddTextObjProp(iObject, "UseMsg", 0, iTime);
+	return 0;
+}
 #else
+int ShowBook(int iObject, bool bArt, int iTime)
+{
 	SService<IPropertySrv> pPS(g_pScriptManager);
 	if (!pPS->Possessed(iObject, "Book"))
 		return 1;
@@ -63,6 +67,6 @@ int ShowBook(int iObject, bool bArt, int iTime)
 		}
 		str.Free();
 	}
-#endif
 	return 0;
 }
+#endif
